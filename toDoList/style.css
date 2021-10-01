@@ -1,0 +1,130 @@
+:root {
+  --primary-color: #2a2d3e;
+  --secondary-color: #88abf2;
+  --third-color: #b894cb;
+  --fourth-color: #233d8c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62, 5%;
+}
+
+body {
+  background-color: var(--primary-color);
+  font: bold 2rem "Opens Sans", sans-serif;
+}
+
+.todo {
+  display: flex;
+  width: 50vw;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  gap: 15px;
+}
+
+.todo_title {
+  display: flex;
+  background-color: var(--secondary-color);
+  width: 100%;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  box-shadow: 1px 1px 5px var(--secondary-color);
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.todo_list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--third-color);
+}
+
+.todo_item {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  box-shadow: 1px 1px 5px var(--secondary-color);
+}
+
+.todo_item > div {
+  width: 80%;
+}
+
+.todo_item:hover {
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.todo_item > input[type="text"] {
+  border: none;
+  width: 80%;
+  font: inherit;
+  color: var(--third-color);
+}
+
+.todo_item > input[type="button"],
+.todo_item > input[type="checbox"] {
+  width: 35px;
+  height: 35px;
+  font: inherit;
+}
+
+.todo_item > input[type="checkbox"]:checked + div {
+  text-decoration: line-through;
+}
+
+.todo_new-item {
+  display: flex;
+  background-color: var(--fourth-color);
+  width: 100%;
+  height: 70px;
+  justify-content: space-evenly;
+  padding: 10px 0;
+  box-shadow: 1px 1px 5px var(--secondary-color);
+  margin: 10px;
+  font: inherit;
+  color: var(--third-color);
+}
+
+.todo_new-item > input {
+  background-color: var(--fourth-color);
+  border: none;
+  width: 80%;
+  outline: none;
+  font: inherit;
+  color: var(--third-color);
+}
+
+.todo_new-item > input::placeholder {
+  font-style: italic;
+  font-weight: normal;
+  color: var(--third-color);
+}
+
+@media screen and (max-width: 820px) {
+  .todo_new-item > input::placeholder {
+    font-size: min(9px, 2em);
+  }
+  .todo_new-item {
+    font-size: 20px;
+  }
+  .todo_item {
+    font-size: 20px;
+  }
+}
